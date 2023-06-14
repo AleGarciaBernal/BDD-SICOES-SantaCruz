@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  db:
+    image: mysql:debian
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456789
+      MYSQL_REPLICATION_MODE: master
+      MYSQL_DATABASE: bddInventario
+      MYSQL_LOG_CONSOLE: 'true'
+      MYSQL_LOG_BIN: "mysql-bin"
+      MYSQL_USER: replication_user
+      MYSQL_PASSWORD: 123456
+    ports:
+      - "3311:3306"
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./shadowtable.sql:/docker-entrypoint-initdb.d/shadowtable.sql
+      - ./triggers.sql:/docker-entrypoint-initdb.d/triggers.sql
+      - ./storeProcedures.sql:/docker-entrypoint-initdb.d/storeProcedures.sql
+      - ./initialData.sql:/docker-entrypoint-initdb.d/initialData.sql
