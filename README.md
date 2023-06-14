@@ -18,7 +18,8 @@ La base de datos consta de las siguientes tablas:
 - `EstadoSolicitud`: Guarda los posibles estados de las solicitudes.
 - `Solicitudes`: Registra las solicitudes realizadas por los empleados, incluyendo la fecha, estado, solicitante y equipo de trabajo asociado.
 - `DetallesSolicitud`: Almacena los detalles de cada solicitud, incluyendo los activos solicitados y la cantidad.
-
+## Diagrama ER
+- Disponible en la carpeta bdd2
 ## Uso de la Base de Datos
 - Puede realizar consultas y operaciones CRUD (crear, leer, actualizar, eliminar) en las tablas utilizando sentencias SQL adecuadas.
 
